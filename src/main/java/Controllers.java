@@ -5,6 +5,8 @@ import com.google.gson.JsonParser;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -40,6 +42,19 @@ public class Controllers {
         room.setLight(getLightFromJsonObject(roomJson.get("light").getAsJsonObject()));
         room.setEmployees(getListEmployee(roomJson.get("employees").getAsJsonArray()));
         return room;
+    }
+
+    public static void updateLight(boolean isOn, String hexColor, int id) throws Exception{
+        String hexaColor = "%23" + hexColor;
+        if(hexaColor.charAt(0) == '#') {
+            hexaColor = "%23" + hexColor.substring(1);
+        }
+        String urlString = String.format("https://squirtle.azurewebsites.net/yulcode/lights/%d?hexColor=%s&isOn=%b",
+                id, hexaColor, isOn);
+        URL url = new URL(urlString);
+        HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+        httpCon.setDoOutput(true);
+        httpCon.setRequestMethod("PUT");
     }
 
     private static Light getLightFromJsonObject(JsonObject lightJson){
