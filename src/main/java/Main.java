@@ -80,20 +80,20 @@ public class Main {
         time = passTime(time);
     }
 
-    public static void updateAllRooms(int time) throws Exception {
+    private static void updateAllRooms(int time) throws Exception {
         for (int i = 1; i <= 6; i++) {
             Room room = Controllers.getRoom(i);
 
             if (room.isEmpty()) {
                 room.light.turnOff();
-                System.out.println("Lights off!");
+                System.out.println("Lights off in room " + i + "!");
             } else {
                 room.light.turnOn();
-                System.out.println("Lights on!");
+                System.out.println("Lights on in room " + i + "!");
             }
             Controllers.updateLight(room.light.isTurnedOn(), Light.getDayColor(time), room.light.getId());
-            System.out.println(room);
         }
+        showAllRooms();
     }
 
     public static void showAllRooms() throws Exception {
@@ -103,7 +103,7 @@ public class Main {
         }
     }
 
-    public static void moveEmployees(ArrayList<Integer> employees, ArrayList<Integer> destinations) throws Exception {
+    private static void moveEmployees(ArrayList<Integer> employees, ArrayList<Integer> destinations) throws Exception {
         assert(employees.size() == destinations.size());
 
         for (int i = 0; i < employees.size(); i++) {
@@ -111,16 +111,18 @@ public class Main {
         }
     }
 
-    public static void moveEmployeesOut() throws Exception {
+    private static void moveEmployeesOut() throws Exception {
         for (int i = 1; i <= 19; i++) {
             Controllers.updateEmployeePosition(i, 1);
         }
-        System.out.println("Everyone's out!");
+        System.out.println("\nEveryone's out!\nKidding, they're all sleeping in the reception XD\n");
     }
 
-    public static int passTime(int time) {
+    private static int passTime(int time) {
         time ++;
+        System.out.println("\n*********************");
         System.out.println("It's " + time + "H00");
+        System.out.println("*********************");
         return time;
     }
 }
