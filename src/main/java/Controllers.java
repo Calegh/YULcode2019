@@ -40,7 +40,7 @@ public class Controllers {
         } else{
             light.turnOff();
         }
-        light.setColor(lightJson.get("hexColor").getAsString());
+        light.setHexColor(lightJson.get("hexColor").getAsString());
         return light;
     }
 
