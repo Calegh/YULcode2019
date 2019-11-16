@@ -9,7 +9,7 @@ abstract class Room {
     int capacity;
     Thermostat thermo;
     Television tv;
-    Light light;
+    ArrayList<Light> lights;
     Phone phone;
     Speaker speaker;
     ArrayList<Employee> employees;
@@ -18,13 +18,13 @@ abstract class Room {
         this.id = id;
     }
 
-    public Room(int id, String name, int capacity, Thermostat thermo, Television tv, Light light, Phone phone, Speaker speaker, ArrayList<Employee> employees) {
+    public Room(int id, String name, int capacity, Thermostat thermo, Television tv, ArrayList<Light> lights, Phone phone, Speaker speaker, ArrayList<Employee> employees) {
         this.id = id;
         this.name = name;
         this.capacity = capacity;
         this.thermo = thermo;
         this.tv = tv;
-        this.light = light;
+        this.lights = lights;
         this.phone = phone;
         this.speaker = speaker;
         this.employees = employees;
@@ -70,12 +70,12 @@ abstract class Room {
         this.tv = tv;
     }
 
-    public Light getLight() {
-        return light;
+    public ArrayList<Light> getLights() {
+        return lights;
     }
 
-    public void setLight(Light light) {
-        this.light = light;
+    public void setLights(ArrayList<Light> lights) {
+        this.lights = lights;
     }
 
     public Phone getPhone() {
@@ -104,5 +104,23 @@ abstract class Room {
 
     @Override
     public String toString() { return "";}
+
+    //METHODES
+
+    public boolean isEmpty(){
+        return (employees.size() == 0);
+    }
+
+    public void turnOnLights(){
+        for (int i = 0; i < lights.size(); i++){
+            lights.get(i).turnOn();
+        }
+    }
+
+    public void turnOffLights(){
+        for (int i = 0; i < lights.size(); i++){
+            lights.get(i).turnOff();
+        }
+    }
 
 }
