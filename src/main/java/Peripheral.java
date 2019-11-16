@@ -11,4 +11,12 @@ abstract class Peripheral {
         this.id = id;
         this.isOn = isOn;
     }
+
+    public void turnOn() {
+        this.isOn = true;
+    }
+
+    public void turnOff() {
+        this.isOn = false;
+    }
 }

@@ -1,20 +1,12 @@
 class Light extends Peripheral {
-    string hexColor;
+    String hexColor;
 
-    public Light(int id, boolean isOn, string hexColor) {
+    public Light(int id, boolean isOn, String hexColor) {
         super(id, isOn);
         this.hexColor = hexColor;
     }
 
-    public turnOn() {
-        this.isOn = true;
-    }
-
-    public turnOff() {
-        this.isOn = false;
-    }
-
-    public changeColor(string color) {
+    public void changeColor(String color) {
         this.hexColor = color;
     }
 
