@@ -1,3 +1,4 @@
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -6,6 +7,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 
 import static com.google.gson.JsonParser.parseReader;
 
@@ -13,12 +15,7 @@ public class Controllers {
     public static Employee getEmployee(int employeeID) throws Exception{
         String sURL = String.format("https://squirtle.azurewebsites.net/yulcode/employees/%d", employeeID);
         JsonObject employeeJSON = JSONUtils.getJSONObjectFromURL(sURL);
-        Employee emp = new Employee();
-
-        emp.setId(employeeID);
-        emp.setEmail(employeeJSON.get("email").getAsString());
-        emp.setName(employeeJSON.get("name").getAsString());
-        emp.setTitle(employeeJSON.get("title").getAsString());
+        Employee emp = getEmployeeFromJsonObject(employeeJSON);
         return emp;
     }
 
@@ -40,11 +37,12 @@ public class Controllers {
         }
         room.setCapacity(roomJson.get("capacity").getAsInt());
         room.setName(roomJson.get("name").getAsString());
-        room.setLight(getLightFromJsonObject(roomJson.get("light").getAsJsonObject()));
+        room.setLights(getLightFromJsonObject(roomJson.get("light").getAsJsonObject()));
+        room.setEmployees(getListEmployee(roomJson.get("employees").getAsJsonArray()));
         return room;
     }
 
-    public static Light getLightFromJsonObject(JsonObject lightJson){
+    private static Light getLightFromJsonObject(JsonObject lightJson){
         Light light = new Light(lightJson.get("id").getAsInt());
         boolean isOn = lightJson.get("isOn").getAsBoolean();
         if (isOn){
@@ -55,5 +53,24 @@ public class Controllers {
         light.setHexColor(lightJson.get("hexColor").getAsString());
         return light;
     }
+
+    private static Employee getEmployeeFromJsonObject(JsonObject employeeJson){
+        Employee emp = new Employee();
+        emp.setId(employeeJson.get("id").getAsInt());
+        emp.setEmail(employeeJson.get("email").getAsString());
+        emp.setName(employeeJson.get("name").getAsString());
+        emp.setTitle(employeeJson.get("title").getAsString());
+        return emp;
+    }
+
+    private static ArrayList<Employee> getListEmployee(JsonArray listEmployeeJson){
+        ArrayList<Employee> listEmployee = new ArrayList<>();
+        for(int i = 0; i < listEmployeeJson.size(); i++){
+            listEmployee.add(getEmployeeFromJsonObject(listEmployeeJson.get(i).getAsJsonObject()));
+        }
+        return listEmployee;
+    }
+
+
 
 }
