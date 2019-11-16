@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 
 abstract class Room {
@@ -87,5 +89,8 @@ abstract class Room {
 
     public void setEmployees(ArrayList<Employee> employees) {
     }
+
+    @Override
+    public String toString() { return "";}
 
 }

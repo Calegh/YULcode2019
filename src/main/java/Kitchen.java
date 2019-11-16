@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 
 public class Kitchen extends Room {
@@ -105,5 +107,11 @@ public class Kitchen extends Room {
     @Override
     public void setEmployees(ArrayList<Employee> employees) {
         this.employees = employees;
+    }
+
+    @Override
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
     }
 }
