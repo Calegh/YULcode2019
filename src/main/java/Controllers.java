@@ -37,7 +37,7 @@ public class Controllers {
         }
         room.setCapacity(roomJson.get("capacity").getAsInt());
         room.setName(roomJson.get("name").getAsString());
-        room.setLights(getLightFromJsonObject(roomJson.get("light").getAsJsonObject()));
+        room.setLight(getLightFromJsonObject(roomJson.get("light").getAsJsonObject()));
         room.setEmployees(getListEmployee(roomJson.get("employees").getAsJsonArray()));
         return room;
     }

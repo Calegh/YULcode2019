@@ -103,7 +103,10 @@ abstract class Room {
     }
 
     @Override
-    public String toString() { return "";}
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
+    }
 
     //METHODES
 
