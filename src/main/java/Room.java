@@ -13,9 +13,11 @@ abstract class Room {
     Phone phone;
     Speaker speaker;
     ArrayList<Employee> employees;
+    double timeStart;
 
     public Room(int id){
         this.id = id;
+        this.timeStart = System.nanoTime();
     }
 
     public Room(int id, String name, int capacity, Thermostat thermo, Television tv, Light light, Phone phone, Speaker speaker, ArrayList<Employee> employees) {
@@ -28,6 +30,7 @@ abstract class Room {
         this.phone = phone;
         this.speaker = speaker;
         this.employees = employees;
+        this.timeStart = System.nanoTime();
     }
 
     public int getId() {
@@ -102,6 +105,14 @@ abstract class Room {
         this.employees = employees;
     }
 
+    public double getTimeStart() {
+        return timeStart;
+    }
+
+    public void setTimeStart(double timeStart) {
+        this.timeStart = timeStart;
+    }
+
     @Override
     public String toString() {
         Gson gson = new Gson();
@@ -112,6 +123,10 @@ abstract class Room {
 
     public boolean isEmpty(){
         return (employees.size() == 0);
+    }
+
+    public double minutesPassed(){
+        return (((System.nanoTime() - timeStart) / 1_000_000_000) / 60);
     }
 
 }
