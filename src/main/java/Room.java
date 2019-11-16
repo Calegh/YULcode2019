@@ -105,4 +105,10 @@ abstract class Room {
     @Override
     public String toString() { return "";}
 
+    //METHODES
+
+    public boolean isEmpty(){
+        return (employees.size() == 0);
+    }
+
 }

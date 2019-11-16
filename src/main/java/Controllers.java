@@ -22,7 +22,38 @@ public class Controllers {
         return emp;
     }
 
+    public static Room getRoom(int roomID) throws Exception{
+        String sURL = String.format("https://squirtle.azurewebsites.net/yulcode/rooms/%d", roomID);
+        JsonObject roomJson = JSONUtils.getJSONObjectFromURL(sURL);
+        Room room;
+        String name = roomJson.get("name").getAsString();
+        if (name.equals("Réception")){
+            room = new Reception(roomID);
+        } else if (name.equals("Bureau")){
+            room = new PrivateOffice(roomID);
+        }  else if (name.equals("Open Space")){
+            room = new WorkArea(roomID);
+        } else if (name.equals("Salle de Conférence")){
+            room = new ConferenceRoom(roomID);
+        } else{
+            room = new Kitchen(roomID);
+        }
+        room.setCapacity(roomJson.get("capacity").getAsInt());
+        room.setName(roomJson.get("name").getAsString());
+        room.setLight(getLightFromJsonObject(roomJson.get("light").getAsJsonObject()));
+        return room;
+    }
 
-
+    public static Light getLightFromJsonObject(JsonObject lightJson){
+        Light light = new Light(lightJson.get("id").getAsInt());
+        boolean isOn = lightJson.get("isOn").getAsBoolean();
+        if (isOn){
+            light.turnOn();
+        } else{
+            light.turnOff();
+        }
+        light.setHexColor(lightJson.get("hexColor").getAsString());
+        return light;
+    }
 
 }
