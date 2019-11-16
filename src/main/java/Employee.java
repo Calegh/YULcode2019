@@ -1,5 +1,3 @@
-package SmartOffice;
-
 import com.google.gson.Gson;
 
 public class Employee {

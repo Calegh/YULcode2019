@@ -1,5 +1,3 @@
-package SmartOffice.Peripherals;
-
 public class Television extends Peripheral {
     private boolean isPlaying;
     private String source;

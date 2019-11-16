@@ -1,6 +1,3 @@
-package SmartOffice.Rooms;
-
-
 import java.util.ArrayList;
 
 public class Reception extends Room {

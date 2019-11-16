@@ -1,5 +1,3 @@
-package SmartOffice.Peripherals;
-
 public class Light extends Peripheral {
     private String hexColor;
 

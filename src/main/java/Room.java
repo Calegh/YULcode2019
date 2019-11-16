@@ -1,7 +1,3 @@
-package SmartOffice.Rooms;
-
-import SmartOffice.Employee;
-import SmartOffice.Peripherals.*;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 

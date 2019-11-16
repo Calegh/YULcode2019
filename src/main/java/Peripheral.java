@@ -1,5 +1,3 @@
-package SmartOffice.Peripherals;
-
 abstract class Peripheral {
     private int id;
     private boolean isOn;

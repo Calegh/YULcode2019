@@ -1,7 +1,3 @@
-package SmartOffice.Rooms;
-
-import SmartOffice.Peripherals.*;
-import SmartOffice.Employee;
 import java.util.ArrayList;
 
 public class ConferenceRoom extends Room {

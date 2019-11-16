@@ -1,7 +1,3 @@
-package SmartOffice.Rooms;
-
-import SmartOffice.Rooms.Room;
-
 import java.util.ArrayList;
 
 public class WorkArea extends Room {
