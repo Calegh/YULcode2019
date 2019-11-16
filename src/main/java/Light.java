@@ -10,5 +10,4 @@ class Light extends Peripheral {
         this.hexColor = color;
     }
 
-
 }
