@@ -128,4 +128,8 @@ public abstract class Room {
         return (((System.nanoTime() - timeStart) / 1_000_000_000) / 60);
     }
 
+    public void resetTime(){
+        this.timeStart = System.nanoTime();
+    }
+
 }
