@@ -41,7 +41,7 @@ public class Controllers {
 
     public static void updateLight(boolean isOn, String hexColor, int id) throws Exception{
         String hexaColor = "%23" + hexColor;
-        if(hexaColor.charAt(0) == '#') {
+        if(hexColor.charAt(0) == '#') {
             hexaColor = "%23" + hexColor.substring(1);
         }
         String urlString = String.format("https://squirtle.azurewebsites.net/yulcode/lights/%d?hexColor=%s&isOn=%b",
