@@ -17,4 +17,6 @@ class Light extends Peripheral {
     public changeColor(string color) {
         this.hexColor = color;
     }
+
+
 }
