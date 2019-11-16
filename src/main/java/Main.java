@@ -15,6 +15,11 @@ public class Main {
                     room.light.turnOn();
                     System.out.println("Lights on!");
                 }
+
+                Controllers.updateLight(room.light.isTurnedOn(), room.light.getHexColor(), room.light.getId());
+
+                room = Controllers.getRoom(3);
+                System.out.println(room);
             //}
         //}
     }

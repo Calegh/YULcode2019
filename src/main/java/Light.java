@@ -9,6 +9,10 @@ public class Light extends Peripheral {
         this.hexColor = hexColor;
     }
 
+    public String getHexColor() {
+        return hexColor;
+    }
+
     public void setHexColor(String color) {
         this.hexColor = color;
     }
