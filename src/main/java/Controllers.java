@@ -39,6 +39,13 @@ public class Controllers {
         return room;
     }
 
+    public static ArrayList<Employee> getAllEmployees() throws Exception{
+        String sURL = "https://squirtle.azurewebsites.net/yulcode/employees";
+        JsonArray employeesJSON = JSONUtils.getJSONArrayFromURL(sURL);
+        return getListEmployee(employeesJSON);
+
+    }
+
     public static void updateLight(boolean isOn, String hexColor, int id) throws Exception{
         String hexaColor = "%23" + hexColor;
         if(hexColor.charAt(0) == '#') {
