@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+
 public class Employee {
     private int id;
     private String name;
@@ -42,5 +44,11 @@ public class Employee {
 
     public void setTitle(String title) {
         title = title;
+    }
+
+    @Override
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
     }
 }
