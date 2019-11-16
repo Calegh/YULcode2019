@@ -1,11 +1,10 @@
 public class Phone extends Peripheral {
 
-    String phoneNumber;
-    boolean isCalling;
+    private String phoneNumber;
+    private boolean isCalling;
 
     public Phone(int id, String phoneNumber) {
         super(id);
-        this.isOn = false;
         this.phoneNumber = phoneNumber;
         this.isCalling = false;
     }
