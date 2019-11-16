@@ -21,10 +21,14 @@ abstract class Peripheral {
     }
 
     public void turnOn() {
-        this.isOn = true;
+        if (!isOn) {
+            this.isOn = true;
+        }
     }
 
     public void turnOff() {
-        this.isOn = false;
+        if (isOn) {
+            this.isOn = false;
+        }
     }
 }

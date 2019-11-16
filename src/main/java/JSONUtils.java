@@ -1,7 +1,5 @@
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import net.sf.json.JSONObject;
-
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
