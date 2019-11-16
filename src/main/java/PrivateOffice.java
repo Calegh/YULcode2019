@@ -17,7 +17,7 @@ public class PrivateOffice extends Room {
         this.tv = null;
         this.speaker = null;
     }
-
+    //GETTERS ET SETTERS
     @Override
     public int getId() {
         return id;
@@ -85,4 +85,10 @@ public class PrivateOffice extends Room {
     public void setEmployees(ArrayList<Employee> employees) {
         this.employees = employees;
     }
+
 }
+
+
+
+
+

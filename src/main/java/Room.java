@@ -47,11 +47,10 @@ abstract class Room {
     }
 
     public Thermostat getThermo() {
-        return thermo;
+        return null;
     }
 
     public void setThermo(Thermostat thermo) {
-        this.thermo = thermo;
     }
 
     public Television getTv() {
@@ -63,18 +62,18 @@ abstract class Room {
     }
 
     public Light getLight() {
-        return light;
+        return null;
     }
 
     public void setLight(Light light) {
-        this.light = light;
+        ;
     }
 
     public Phone getPhone() {
-        return phone;
+        return null;
     }
 
     public void setPhone(Phone phone) {
-        this.phone = phone;
+
     }
 }
