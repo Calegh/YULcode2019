@@ -1,6 +1,6 @@
 abstract class Peripheral {
-    int id;
-    boolean isOn;
+    private int id;
+    private boolean isOn;
 
     public Peripheral(int id) {
         this.id = id;
@@ -10,6 +10,14 @@ abstract class Peripheral {
     public Peripheral(int id, boolean isOn) {
         this.id = id;
         this.isOn = isOn;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public boolean isTurnedOn() {
+        return isOn;
     }
 
     public void turnOn() {
