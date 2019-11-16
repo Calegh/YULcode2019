@@ -1,8 +1,7 @@
 import com.google.gson.Gson;
-
 import java.util.ArrayList;
 
-abstract class Room {
+public abstract class Room {
 
     int id;
     String name;
