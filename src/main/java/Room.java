@@ -70,12 +70,12 @@ abstract class Room {
         this.tv = tv;
     }
 
-    public ArrayList<Light> getLights() {
-        return lights;
+    public Light getLight() {
+        return light;
     }
 
-    public void setLights(ArrayList<Light> lights) {
-        this.lights = lights;
+    public void setLight(Light light) {
+        this.light = light;
     }
 
     public Phone getPhone() {
