@@ -14,6 +14,10 @@ abstract class Room {
     Speaker speaker;
     ArrayList<Employee> employees;
 
+    public Room(int id){
+        this.id = id;
+    }
+
     public Room(int id, String name, int capacity, Thermostat thermo, Television tv, Light light, Phone phone, Speaker speaker, ArrayList<Employee> employees) {
         this.id = id;
         this.name = name;
@@ -27,67 +31,75 @@ abstract class Room {
     }
 
     public int getId() {
-        return 0;
+        return id;
     }
 
     public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
-        return "";
+        return name;
     }
 
     public void setName(String name) {
-
+        this.name = name;
     }
 
     public int getCapacity() {
-        return 0;
+        return capacity;
     }
 
     public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public Thermostat getThermo() {
-        return null;
+        return thermo;
     }
 
     public void setThermo(Thermostat thermo) {
+        this.thermo = thermo;
     }
 
     public Television getTv() {
-        return null;
+        return tv;
     }
 
     public void setTv(Television tv) {
+        this.tv = tv;
     }
 
     public Light getLight() {
-        return null;
+        return light;
     }
 
     public void setLight(Light light) {
+        this.light = light;
     }
 
     public Phone getPhone() {
-        return null;
+        return phone;
     }
 
     public void setPhone(Phone phone) {
+        this.phone = phone;
     }
 
     public Speaker getSpeaker() {
-        return null;
+        return speaker;
     }
 
     public void setSpeaker(Speaker speaker) {
+        this.speaker = speaker;
     }
 
     public ArrayList<Employee> getEmployees() {
-        return null;
+        return employees;
     }
 
     public void setEmployees(ArrayList<Employee> employees) {
+        this.employees = employees;
     }
 
     @Override
