@@ -52,7 +52,7 @@ public class Controllers {
         httpCon.setRequestMethod("PUT");
     }
 
-    public static void updateEmployePosition(int employeeID, int newRoomID) throws Exception{
+    public static void updateEmployeePosition(int employeeID, int newRoomID) throws Exception{
         String urlString = String.format("https://squirtle.azurewebsites.net/yulcode/employees/%d?roomId=%d",
                 employeeID, newRoomID);
         URL url = new URL(urlString);

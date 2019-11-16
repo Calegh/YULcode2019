@@ -6,6 +6,6 @@ public class OurHTTPServer {
         System.out.println(Controllers.getRoom(2));
         Controllers.updateLight(true, "32CD32", 2);
         System.out.println(Controllers.getRoom(2));
-        Controllers.updateEmployePosition(3,4);
+        Controllers.updateEmployeePosition(3,2);
     }
 }
