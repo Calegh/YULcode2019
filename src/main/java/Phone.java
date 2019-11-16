@@ -1,3 +1,5 @@
+package SmartOffice.Peripherals;
+
 public class Phone extends Peripheral {
 
     private String phoneNumber;

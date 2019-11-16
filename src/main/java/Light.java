@@ -1,4 +1,6 @@
-class Light extends Peripheral {
+package SmartOffice.Peripherals;
+
+public class Light extends Peripheral {
     private String hexColor;
 
     public Light(int id){

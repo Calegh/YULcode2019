@@ -1,4 +1,5 @@
-import com.google.gson.Gson;
+package SmartOffice.Rooms;
+
 
 import java.util.ArrayList;
 

@@ -1,3 +1,5 @@
+package SmartOffice.Peripherals;
+
 public class Speaker extends Peripheral {
     private boolean isConnected;
     private boolean isPlaying;

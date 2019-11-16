@@ -1,3 +1,7 @@
+package SmartOffice;
+
+import Peripherals.*;
+
 public class OurHTTPServer {
     static final int port=8080;
 
