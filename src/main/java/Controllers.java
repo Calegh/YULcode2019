@@ -10,7 +10,7 @@ import java.net.URLConnection;
 import static com.google.gson.JsonParser.parseReader;
 
 public class Controllers {
-    public static JsonObject getEmployee(int employeeID) throws Exception{
+    public static Employee getEmployee(int employeeID) throws Exception{
         String sURL = String.format("https://squirtle.azurewebsites.net/yulcode/employees/%d", employeeID);
         JsonObject employeeJSON = JSONUtils.getJSONObjectFromURL(sURL);
         Employee emp = new Employee();
@@ -19,8 +19,10 @@ public class Controllers {
         emp.setEmail(employeeJSON.get("email").getAsString());
         emp.setName(employeeJSON.get("name").getAsString());
         emp.setTitle(employeeJSON.get("title").getAsString());
-        return employeeJSON;
+        return emp;
     }
+
+
 
 
 }
